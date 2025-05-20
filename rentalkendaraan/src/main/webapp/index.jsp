@@ -78,6 +78,26 @@
         .btn:hover {
             background-color: #0056b3;
         }
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 1;
+          
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
     </style>
 </head>
 <body>
@@ -85,11 +105,19 @@
 <div class="navbar">
     <div><strong>Brand Name</strong></div>
     <div class="menu">
-        <a href="#">Dashboard</a>
+        <a href="tambahKendaraan">Input Kendaraan</a>
         <a href="listKendaraan">Data Kendaraan</a>
-        <a href="tambahTransaksi">Sewa Kendaraan</a>
+        <a href="tambahTransaksi">Buat Transaksi</a>
         <a href="#">Laporan</a>
-        <span>Welcome, Admin!</span>
+        <input type="hidden" name="idAdmin" value="${sessionScope.idAdmin}" />
+        <div class="dropdown">
+          <span>Welcome, ${sessionScope.namaAdmin}!</span>
+          <div class="dropdown-content">
+          <a href="logout">Logout</a>
+          </div>
+        </div>
+        
+
     </div>
 </div>
 
@@ -146,6 +174,9 @@
                     <td>${trx.totalHarga}</td>
                     <td>${trx.status}</td>
                     <td>
+                        <a href="hapusTransaksi?id=${trx.idTransaksi}" class="btn" style="background-color: red">Hapus</a>
+                        <a href="" class="btn" target="_blank">Edit</a>
+                        <a href="SelesaiTransaksiServlet?id=${trx.idTransaksi}" class="btn" style="background-color: green">Selesai</a>
                         <a href="CetakInvoiceServlet?id=${trx.idTransaksi}" class="btn" target="_blank">Cetak Invoice</a>
                     </td>
                 </tr>

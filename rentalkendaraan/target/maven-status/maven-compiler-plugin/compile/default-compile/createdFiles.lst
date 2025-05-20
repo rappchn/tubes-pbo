@@ -7,11 +7,13 @@ com\mycompany\rentalkendaraan\controller\RegisterServlet.class
 com\mycompany\rentalkendaraan\model\Transaksi.class
 com\mycompany\rentalkendaraan\resources\JakartaEE8Resource.class
 com\mycompany\rentalkendaraan\controller\LoginServlet.class
+com\mycompany\rentalkendaraan\controller\HapusTransaksiServlet.class
 com\mycompany\rentalkendaraan\controller\TambahTransaksiServlet.class
 com\mycompany\rentalkendaraan\model\DatabaseConnection.class
 com\mycompany\rentalkendaraan\controller\DashboardServlet.class
 com\mycompany\rentalkendaraan\controller\ListKendaraanServlet.class
 com\mycompany\rentalkendaraan\model\Mobil.class
 com\mycompany\rentalkendaraan\controller\LogoutServlet.class
+com\mycompany\rentalkendaraan\controller\SelesaiTransaksiServlet.class
 com\mycompany\rentalkendaraan\controller\TambahKendaraanServlet.class
 com\mycompany\rentalkendaraan\model\Admin.class

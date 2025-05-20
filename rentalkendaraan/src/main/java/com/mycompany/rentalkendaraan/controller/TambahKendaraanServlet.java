@@ -66,7 +66,7 @@ public class TambahKendaraanServlet extends HttpServlet {
 
             int rows = stmt.executeUpdate();
             if (rows > 0) {
-                response.sendRedirect("sukses.jsp");
+                response.sendRedirect("listKendaraan");
             } else {
                 response.getWriter().println("Gagal menambahkan kendaraan.");
             }
@@ -84,7 +84,18 @@ public class TambahKendaraanServlet extends HttpServlet {
             return null;
         }
     }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getRequestDispatcher("tambah.jsp").forward(request, response);
+    }
+
+
+
 }
+
+
 
 
 

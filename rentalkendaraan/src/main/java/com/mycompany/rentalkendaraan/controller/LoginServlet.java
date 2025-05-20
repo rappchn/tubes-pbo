@@ -35,9 +35,11 @@ public class LoginServlet extends HttpServlet {
 
             if (rs.next()) {
                 int idAdmin = rs.getInt("id");  // Ambil ID dari DB
+                String namaAdmin = rs.getString("username");
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
                 session.setAttribute("idAdmin", idAdmin);  // Simpan ke session
+                session.setAttribute("namaAdmin", namaAdmin);
                 System.out.println("ID Admin dari DB: " + idAdmin);
                 response.sendRedirect("dashboard");
             } else {

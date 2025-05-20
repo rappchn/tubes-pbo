@@ -2,6 +2,27 @@
 <html>
 <head>
     <title>Tambah Kendaraan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #f2f2f2;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
     <script>
         function tampilkanFormTambahan() {
             var tipe = document.getElementById("tipe").value;
@@ -20,6 +41,18 @@
     </script>
 </head>
 <body>
+    <div class="navbar">
+    <a href="dashboard"><div><strong>Brand Name</strong></div></a>
+    <div class="menu">
+        <a href="tambahKendaraan">Input Kendaraan</a>
+        <a href="listKendaraan">Data Kendaraan</a>
+        <a href="tambahTransaksi">Buat Transaksi</a>
+        <a href="#">Laporan</a>
+        <input type="hidden" name="idAdmin" value="${sessionScope.idAdmin}" />
+        <span>Welcome, ${sessionScope.namaAdmin}!</span>
+
+    </div>
+    </div>
 <h2>Tambah Kendaraan</h2>
 <form action="tambahKendaraan" method="post">
     Tipe:
@@ -55,6 +88,6 @@
 
     <input type="submit" value="Tambah">
 </form>
-<a href="logout">Logout</a>
+
 </body>
 </html>

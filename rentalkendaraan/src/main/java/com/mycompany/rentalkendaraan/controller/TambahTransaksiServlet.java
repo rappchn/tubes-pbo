@@ -72,6 +72,12 @@ public class TambahTransaksiServlet extends HttpServlet {
                 stmt.setInt(7, totalHarga);
 
                 stmt.executeUpdate();
+                
+                PreparedStatement updateKendaraan = conn.prepareStatement(
+                    "UPDATE kendaraan SET tersedia = 0 WHERE id_kendaraan = ?");
+                updateKendaraan.setString(1, idKendaraan);
+                updateKendaraan.executeUpdate();
+                int updated = updateKendaraan.executeUpdate();
 
                 response.sendRedirect("dashboard");
 
@@ -108,3 +114,5 @@ public class TambahTransaksiServlet extends HttpServlet {
         }
     }
 }
+
+
